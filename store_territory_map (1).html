@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store Territory Assignment</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map { height: 90vh; width: 100%; }
+        #controls { padding: 10px; }
+        .selected-store { font-weight: bold; color: blue; }
+    </style>
+</head>
+<body>
+    <h2>Store Territory Assignment Map</h2>
+    <div id="controls">
+        <span id="selectedStore" class="selected-store">No store selected</span>
+        <button onclick="exportAssignments()">Export Assignments to CSV</button>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+    <script>
+        let map = L.map('map').setView([-25.2744, 133.7751], 4); // Centered on Australia
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+        }).addTo(map);
+
+        let storeMarkers = {};
+        let postcodeMarkers = {};
+        let assignments = {};
+        let selectedStore = null;
+
+        function updateSelectedStoreDisplay() {
+            document.getElementById('selectedStore').textContent = selectedStore ? 'Selected Store: ' + selectedStore : 'No store selected';
+        }
+
+        function assignPostcodeToStore(postcode) {
+            if (!selectedStore) {
+                alert("Please select a store first.");
+                return;
+            }
+            if (!assignments[selectedStore]) {
+                assignments[selectedStore] = new Set();
+            }
+            assignments[selectedStore].add(postcode);
+
+            // Update marker color to indicate assignment
+            let marker = postcodeMarkers[postcode];
+            if (marker) {
+                marker.setStyle({ color: 'red' });
+            }
+        }
+
+        function exportAssignments() {
+            let rows = [["Store Name", "Postcode"]];
+            for (let store in assignments) {
+                assignments[store].forEach(postcode => {
+                    rows.push([store, postcode]);
+                });
+            }
+            let csv = Papa.unparse(rows);
+            let blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            let link = document.createElement("a");
+            link.setAttribute("href", URL.createObjectURL(blob));
+            link.setAttribute("download", "store_postcode_assignments.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Load store data
+        fetch('store_data.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(store => {
+                    let marker = L.marker([store.Latitude, store.Longitude])
+                        .addTo(map)
+                        .bindPopup(store["Store Name"])
+                        .on('click', () => {
+                            selectedStore = store["Store Name"];
+                            updateSelectedStoreDisplay();
+                        });
+                    storeMarkers[store["Store Name"]] = marker;
+                });
+            });
+
+        // Load postcode data
+        fetch('postcode_data.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(pc => {
+                    let marker = L.circleMarker([pc.lat, pc.long], {
+                        radius: 4,
+                        color: 'blue',
+                        fillOpacity: 0.6
+                    })
+                    .addTo(map)
+                    .bindPopup(pc.postcode + " - " + pc.locality)
+                    .on('click', () => {
+                        assignPostcodeToStore(pc.postcode);
+                    });
+                    postcodeMarkers[pc.postcode] = marker;
+                });
+            });
+    </script>
+</body>
+</html>
