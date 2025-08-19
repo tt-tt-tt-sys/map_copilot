@@ -1,1 +1,202 @@
-[{"Store Name":"Trek Bicycle Ashmore","Latitude":153.3629333,"Longitude":-27.9859506},{"Store Name":"Trek Bicycle Belmont","Latitude":115.9168093,"Longitude":-31.9527545},{"Store Name":"Trek Bicycle Bennetts Green","Latitude":151.6866114,"Longitude":-32.9970236},{"Store Name":"Trek Bicycle Brunswick East","Latitude":144.973011,"Longitude":-37.7656948},{"Store Name":"Trek Bicycle Burleigh Heads","Latitude":153.4406943,"Longitude":-28.1133664},{"Store Name":"Trek Bicycle Camberwell","Latitude":145.055927,"Longitude":-37.831101},{"Store Name":"Trek Bicycle Cannington","Latitude":115.9287012,"Longitude":-32.0157217},{"Store Name":"Trek Bicycle Carindale","Latitude":153.1125044,"Longitude":-27.5198367},{"Store Name":"Trek Bicycle Carnegie","Latitude":145.0561854,"Longitude":-37.8841841},{"Store Name":"Trek Bicycle Claremont","Latitude":115.7908936,"Longitude":-31.9816566},{"Store Name":"Trek Bicycle Coburg","Latitude":144.9592024,"Longitude":-37.7322735},{"Store Name":"Trek Bicycle Essendon","Latitude":144.8931367,"Longitude":-37.7374489},{"Store Name":"Trek Bicycle Fyshwick","Latitude":149.1706314,"Longitude":-35.3253794},{"Store Name":"Trek Bicycle Gabba","Latitude":153.0353622,"Longitude":-27.4956759},{"Store Name":"Trek Bicycle Hoppers Crossing","Latitude":144.7174409,"Longitude":-37.8753321},{"Store Name":"Trek Bicycle Ipswich","Latitude":152.7812615,"Longitude":-27.6130794},{"Store Name":"Trek Bicycle Joondalup","Latitude":115.7711846,"Longitude":-31.7584954},{"Store Name":"Trek Bicycle Kawana","Latitude":153.1194911,"Longitude":-26.6995903},{"Store Name":"Trek Bicycle Knox","Latitude":145.2408593,"Longitude":-37.8696283},{"Store Name":"Trek Bicycle Majura Park","Latitude":149.1903072,"Longitude":-35.2951379},{"Store Name":"Trek Bicycle Maribyrnong","Latitude":144.8896643,"Longitude":-37.7737654},{"Store Name":"Trek Bicycle Melbourne QV","Latitude":144.9668548,"Longitude":-37.810586},{"Store Name":"Trek Bicycle Myaree","Latitude":115.8590304,"Longitude":-32.046465},{"Store Name":"Trek Bicycle North Lakes","Latitude":153.0152252,"Longitude":-27.2396506},{"Store Name":"Trek Bicycle Osborne Park","Latitude":115.8148527,"Longitude":-31.9023716},{"Store Name":"Trek Bicycle Pakenham","Latitude":145.454414,"Longitude":-38.0629625},{"Store Name":"Trek Bicycle Penrith","Latitude":150.6710035,"Longitude":-33.771735},{"Store Name":"Trek Bicycle Perth CBD","Latitude":115.852206,"Longitude":-31.951904},{"Store Name":"Trek Bicycle Phillip","Latitude":149.089338,"Longitude":-35.3495058},{"Store Name":"Trek Bicycle Richmond","Latitude":145.0095283,"Longitude":-37.8199135},{"Store Name":"Trek Bicycle Ringwood","Latitude":145.2282763,"Longitude":-37.8150393},{"Store Name":"Trek Bicycle Rockhampton","Latitude":150.5214352,"Longitude":-23.3428492},{"Store Name":"Trek Bicycle Rouse Hill","Latitude":150.9248052,"Longitude":-33.6917394},{"Store Name":"Trek Bicycle Sydney","Latitude":151.2054611,"Longitude":-33.8682988},{"Store Name":"Trek Bicycle Turramurra","Latitude":151.1275263,"Longitude":-33.7337159},{"Store Name":"Trek Bicycle Warrawong","Latitude":150.8860045,"Longitude":-34.4865225},{"Store Name":"Trek Bicycle Whitfords","Latitude":115.7454938,"Longitude":-31.798995},{"Store Name":"Trek Bicycle Williamstown","Latitude":144.8978252,"Longitude":-37.8564675},{"Store Name":"Trek Bicycle Windsor","Latitude":153.0261269,"Longitude":-27.4373592},{"Store Name":"Trek Bicycle Wollongong","Latitude":150.8920436,"Longitude":-34.4316712}]
+[
+  {
+    "name": "Trek Bicycle Ashmore",
+    "lat": 153.3629333,
+    "lng": -27.9859506
+  },
+  {
+    "name": "Trek Bicycle Belmont",
+    "lat": 115.9168093,
+    "lng": -31.9527545
+  },
+  {
+    "name": "Trek Bicycle Bennetts Green",
+    "lat": 151.6866114,
+    "lng": -32.9970236
+  },
+  {
+    "name": "Trek Bicycle Brunswick East",
+    "lat": 144.973011,
+    "lng": -37.7656948
+  },
+  {
+    "name": "Trek Bicycle Burleigh Heads",
+    "lat": 153.4406943,
+    "lng": -28.1133664
+  },
+  {
+    "name": "Trek Bicycle Camberwell",
+    "lat": 145.055927,
+    "lng": -37.831101
+  },
+  {
+    "name": "Trek Bicycle Cannington",
+    "lat": 115.9287012,
+    "lng": -32.0157217
+  },
+  {
+    "name": "Trek Bicycle Carindale",
+    "lat": 153.1125044,
+    "lng": -27.5198367
+  },
+  {
+    "name": "Trek Bicycle Carnegie",
+    "lat": 145.0561854,
+    "lng": -37.8841841
+  },
+  {
+    "name": "Trek Bicycle Claremont",
+    "lat": 115.7908936,
+    "lng": -31.9816566
+  },
+  {
+    "name": "Trek Bicycle Coburg",
+    "lat": 144.9592024,
+    "lng": -37.7322735
+  },
+  {
+    "name": "Trek Bicycle Essendon",
+    "lat": 144.8931367,
+    "lng": -37.7374489
+  },
+  {
+    "name": "Trek Bicycle Fyshwick",
+    "lat": 149.1706314,
+    "lng": -35.3253794
+  },
+  {
+    "name": "Trek Bicycle Gabba",
+    "lat": 153.0353622,
+    "lng": -27.4956759
+  },
+  {
+    "name": "Trek Bicycle Hoppers Crossing",
+    "lat": 144.7174409,
+    "lng": -37.8753321
+  },
+  {
+    "name": "Trek Bicycle Ipswich",
+    "lat": 152.7812615,
+    "lng": -27.6130794
+  },
+  {
+    "name": "Trek Bicycle Joondalup",
+    "lat": 115.7711846,
+    "lng": -31.7584954
+  },
+  {
+    "name": "Trek Bicycle Kawana",
+    "lat": 153.1194911,
+    "lng": -26.6995903
+  },
+  {
+    "name": "Trek Bicycle Knox",
+    "lat": 145.2408593,
+    "lng": -37.8696283
+  },
+  {
+    "name": "Trek Bicycle Majura Park",
+    "lat": 149.1903072,
+    "lng": -35.2951379
+  },
+  {
+    "name": "Trek Bicycle Maribyrnong",
+    "lat": 144.8896643,
+    "lng": -37.7737654
+  },
+  {
+    "name": "Trek Bicycle Melbourne QV",
+    "lat": 144.9668548,
+    "lng": -37.810586
+  },
+  {
+    "name": "Trek Bicycle Myaree",
+    "lat": 115.8590304,
+    "lng": -32.046465
+  },
+  {
+    "name": "Trek Bicycle North Lakes",
+    "lat": 153.0152252,
+    "lng": -27.2396506
+  },
+  {
+    "name": "Trek Bicycle Osborne Park",
+    "lat": 115.8148527,
+    "lng": -31.9023716
+  },
+  {
+    "name": "Trek Bicycle Pakenham",
+    "lat": 145.454414,
+    "lng": -38.0629625
+  },
+  {
+    "name": "Trek Bicycle Penrith",
+    "lat": 150.6710035,
+    "lng": -33.771735
+  },
+  {
+    "name": "Trek Bicycle Perth CBD",
+    "lat": 115.852206,
+    "lng": -31.951904
+  },
+  {
+    "name": "Trek Bicycle Phillip",
+    "lat": 149.089338,
+    "lng": -35.3495058
+  },
+  {
+    "name": "Trek Bicycle Richmond",
+    "lat": 145.0095283,
+    "lng": -37.8199135
+  },
+  {
+    "name": "Trek Bicycle Ringwood",
+    "lat": 145.2282763,
+    "lng": -37.8150393
+  },
+  {
+    "name": "Trek Bicycle Rockhampton",
+    "lat": 150.5214352,
+    "lng": -23.3428492
+  },
+  {
+    "name": "Trek Bicycle Rouse Hill",
+    "lat": 150.9248052,
+    "lng": -33.6917394
+  },
+  {
+    "name": "Trek Bicycle Sydney",
+    "lat": 151.2054611,
+    "lng": -33.8682988
+  },
+  {
+    "name": "Trek Bicycle Turramurra",
+    "lat": 151.1275263,
+    "lng": -33.7337159
+  },
+  {
+    "name": "Trek Bicycle Warrawong",
+    "lat": 150.8860045,
+    "lng": -34.4865225
+  },
+  {
+    "name": "Trek Bicycle Whitfords",
+    "lat": 115.7454938,
+    "lng": -31.798995
+  },
+  {
+    "name": "Trek Bicycle Williamstown",
+    "lat": 144.8978252,
+    "lng": -37.8564675
+  },
+  {
+    "name": "Trek Bicycle Windsor",
+    "lat": 153.0261269,
+    "lng": -27.4373592
+  },
+  {
+    "name": "Trek Bicycle Wollongong",
+    "lat": 150.8920436,
+    "lng": -34.4316712
+  }
+]
