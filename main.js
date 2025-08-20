@@ -46,6 +46,49 @@ let storeLocations = {
   "Trek Bicycle Wollongong": [-34.4316712, 150.8920436]
 };
 
+let storeColours = {
+  "Trek Bicycle Ashmore": "#aacb01",
+  "Trek Bicycle Belmont": "#0b13ce",
+  "Trek Bicycle Bennetts Green": "#fe0313",
+  "Trek Bicycle Brunswick East": "#b364f8",
+  "Trek Bicycle Burleigh Heads": "#b38515",
+  "Trek Bicycle Camberwell": "#50117f",
+  "Trek Bicycle Cannington": "#a335f5",
+  "Trek Bicycle Carindale": "#6b2c09",
+  "Trek Bicycle Carnegie": "#458900",
+  "Trek Bicycle Claremont": "#a05616",
+  "Trek Bicycle Coburg": "#4d4f44",
+  "Trek Bicycle Essendon": "#28d43c",
+  "Trek Bicycle Fyshwick": "#1b1500",
+  "Trek Bicycle Gabba": "#f4fcd7",
+  "Trek Bicycle Hoppers Crossing": "#fc92fc",
+  "Trek Bicycle Ipswich": "#0d597a",
+  "Trek Bicycle Joondalup": "#6991c1",
+  "Trek Bicycle Kawana": "#485333",
+  "Trek Bicycle Knox": "#a8b7c6",
+  "Trek Bicycle Majura Park": "#60e186",
+  "Trek Bicycle Maribyrnong": "#b1ba1e",
+  "Trek Bicycle Melbourne QV": "#c1029a",
+  "Trek Bicycle Myaree": "#c0a3af",
+  "Trek Bicycle North Lakes": "#8c5e08",
+  "Trek Bicycle Osborne Park": "#9ad7e5",
+  "Trek Bicycle Pakenham": "#39dcd2",
+  "Trek Bicycle Penrith": "#ece10d",
+  "Trek Bicycle Perth CBD": "#cbf050",
+  "Trek Bicycle Phillip": "#851726",
+  "Trek Bicycle Richmond": "#3842ae",
+  "Trek Bicycle Ringwood": "#5f4243",
+  "Trek Bicycle Rockhampton": "#2d6584",
+  "Trek Bicycle Rouse Hill": "#eb547b",
+  "Trek Bicycle Sydney": "#258e36",
+  "Trek Bicycle Turramurra": "#0f742f",
+  "Trek Bicycle Warrawong": "#e517c0",
+  "Trek Bicycle Whitfords": "#ccf32e",
+  "Trek Bicycle Williamstown": "#a7fb5f",
+  "Trek Bicycle Windsor": "#eb9361",
+  "Trek Bicycle Wollongong": "#26566c"
+};
+
 let storeMarkers = [];
 let selectedStore = "";
 let assignments = {};
@@ -62,10 +105,12 @@ storeSelect.addEventListener("change", function () {
   storeMarkers = [];
 
   if (storeLocations[selectedStore]) {
-    let marker = L.marker(storeLocations[selectedStore])
-      .addTo(map)
-      .bindPopup(`<b>${selectedStore}</b>`)
-      .openPopup();
+    let marker = L.circleMarker(storeLocations[selectedStore], {
+      radius: 8,
+      color: storeColours[selectedStore],
+      fillColor: storeColours[selectedStore],
+      fillOpacity: 1
+    }).addTo(map).bindPopup(`<b>${selectedStore}</b>`).openPopup();
     storeMarkers.push(marker);
     map.setView(storeLocations[selectedStore], 10);
   }
@@ -86,7 +131,6 @@ function exportCSV() {
   link.click();
 }
 
-// Load postcode data
 fetch("postcode_data.json")
   .then(response => response.json())
   .then(postcodeData => {
@@ -102,7 +146,8 @@ fetch("postcode_data.json")
 
       marker.on("click", function () {
         if (!selectedStore) return;
-        marker.setStyle({ fillColor: '#0074D9', color: '#0074D9' });
+        let colour = storeColours[selectedStore] || '#0074D9';
+        marker.setStyle({ fillColor: colour, color: colour });
         if (!assignments[selectedStore]) assignments[selectedStore] = [];
         let alreadyAssigned = assignments[selectedStore].some(p => p.postcode === entry.postcode);
         if (!alreadyAssigned) {
